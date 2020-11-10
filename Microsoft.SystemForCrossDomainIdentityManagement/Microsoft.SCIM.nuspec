@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Evercate.Microsoft.Scim</id>
+    <version>1.0.0</version>
+    <title>Evercate scim based on Microsoft reference code</title>
+    <authors>Evercate AB</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A direkt fork from Microsoft's reference scim code. Only neccesary updates will be done</description>
+    <releaseNotes>initial release</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>microsoft evercate scim</tags>
+  </metadata>
+</package>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
