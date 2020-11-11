@@ -2,16 +2,33 @@
 <package >
   <metadata>
     <id>Evercate.Microsoft.Scim</id>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <title>Evercate scim based on Microsoft reference code</title>
     <authors>Evercate AB</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A direkt fork from Microsoft's reference scim code. Only neccesary updates will be done</description>
-    <releaseNotes>initial release</releaseNotes>
+    <releaseNotes>dependecies</releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>microsoft evercate scim</tags>
+		<dependencies>
+        <group>
+			<dependency id="Json.Net" version="1.0.23" />
+			<dependency id="Microsoft.Extensions.DependencyInjection" version="5.0.0" />
+			<dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="5.0.0" />
+			<dependency id="System.Configuration.ConfigurationManager" version="5.0.0" />
+			<dependency id="System.IdentityModel.Tokens.Jwt" version="6.8.0" />
+			<dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="5.0.0" />
+			<dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="5.0.0" />
+			<dependency id="Microsoft.AspNetCore.Identity.UI" version="5.0.0" />
+			<dependency id="Microsoft.AspNetCore.Mvc.WebApiCompatShim" version="2.2.0" />
+			<dependency id="Microsoft.AspNetCore.Server.Kestrel" version="2.2.0" />
+        </group>
+    </dependencies>
   </metadata>
 </package>
+
+
+
 
 
 
