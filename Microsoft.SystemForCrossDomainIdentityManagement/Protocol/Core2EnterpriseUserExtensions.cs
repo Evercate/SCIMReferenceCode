@@ -929,8 +929,8 @@ namespace Microsoft.SCIM
                 return;
             }
 
-            PhoneNumber phoneNumber = null;
-            PhoneNumber phoneNumberExisting = null;
+            PhoneNumber phoneNumber;
+            PhoneNumber phoneNumberExisting;
             if (user.PhoneNumbers != null)
             {
                 phoneNumberExisting =
@@ -941,8 +941,7 @@ namespace Microsoft.SCIM
                             (PhoneNumber item) =>
                                 string.Equals(subAttribute.ComparisonValue, item.ItemType, StringComparison.Ordinal));
             }
-
-            if(phoneNumber == null)
+            else
             {
                 phoneNumberExisting = null;
                 phoneNumber =
