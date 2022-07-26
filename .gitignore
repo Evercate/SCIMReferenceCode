@@ -332,3 +332,5 @@ ASALocalRun/
 # log files
 Log/
 *.txt
+nuget.config
+NugetKey.txt

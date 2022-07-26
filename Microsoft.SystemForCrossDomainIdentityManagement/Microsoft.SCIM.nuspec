@@ -10,6 +10,7 @@
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>microsoft evercate scim</tags>
+    <repository type="git" url="https://github.com/Evercate/SCIMReferenceCode" />
 		<dependencies>
         <group>
 			<dependency id="Json.Net" version="1.0.23" />

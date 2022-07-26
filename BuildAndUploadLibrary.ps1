@@ -85,7 +85,7 @@ else
 $packages = gci ".\*.nupkg"
 foreach ($package in $packages){
 	$packageLocation = ".\" + $package.Name
-	..\nuget.exe push $packageLocation $nugetApiKey -Source http://nuget.evercate.com/nuget
+	..\nuget.exe push $packageLocation $nugetApiKey -Source "evercate_github"
 	
 	Remove-Item –path $packageLocation
 }
