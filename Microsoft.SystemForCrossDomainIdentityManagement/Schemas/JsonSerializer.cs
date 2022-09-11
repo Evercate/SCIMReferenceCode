@@ -41,6 +41,30 @@ namespace Microsoft.SCIM
             DataContractJsonSerializer serializer =
                 new DataContractJsonSerializer(type, JsonSerializer.SerializerSettings.Value);
 
+            //Fix for a strange bug where serializer.WriteObject would cause stack overflow exception when serializing the operation.Value when it's a JArray (add member to group)
+            //This is a hacky workaround only
+            var stringConvertedArraysCount = 0;
+            if (this.dataContractValue is PatchRequest2)
+            {
+                var patchRequest = ((PatchRequest2)this.dataContractValue);
+                foreach (var operation in patchRequest.Operations)
+                {
+                    //The Get will serialize the value
+                    var serializedValue = operation?.Value?.Trim();
+
+                    //Extremely basic check if it's an array
+                    if (serializedValue[0] == '[' && serializedValue[serializedValue.Length - 1] == ']')
+                    {
+                        //When we set the value it meerely sets it. We basically change backing field type from JArray to string (it's defined as object)
+                        operation.Value = serializedValue;
+
+                        stringConvertedArraysCount++;
+                    }
+
+                }
+            }
+
+
             string json;
             MemoryStream stream = null;
             try

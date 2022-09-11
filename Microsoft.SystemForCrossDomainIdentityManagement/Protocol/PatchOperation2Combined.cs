@@ -38,6 +38,12 @@ namespace Microsoft.SCIM
                     return null;
                 }
 
+                //Preformated json array
+                if (values is string && values.ToString()[0] == '[')
+                {
+                    return values.ToString();
+                }
+
                 string result = JsonConvert.SerializeObject(this.values);
                 return result;
             }
