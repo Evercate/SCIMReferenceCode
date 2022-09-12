@@ -2,31 +2,32 @@
 <package >
   <metadata>
     <id>Evercate.Microsoft.Scim</id>
-    <version>1.0.11</version>
+    <version>1.0.12</version>
     <title>Evercate scim based on Microsoft reference code</title>
     <authors>Evercate AB</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A direkt fork from Microsoft's reference scim code. Only neccesary updates will be done</description>
-    <releaseNotes>Fix for patch array crash</releaseNotes>
+    <releaseNotes>Updated dependencies</releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>microsoft evercate scim</tags>
     <repository type="git" url="https://github.com/Evercate/SCIMReferenceCode" />
 		<dependencies>
         <group>
-			<dependency id="Json.Net" version="1.0.23" />
-			<dependency id="Microsoft.Extensions.DependencyInjection" version="5.0.0" />
-			<dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="5.0.0" />
-			<dependency id="System.Configuration.ConfigurationManager" version="5.0.0" />
-			<dependency id="System.IdentityModel.Tokens.Jwt" version="6.8.0" />
-			<dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="5.0.0" />
-			<dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="5.0.0" />
-			<dependency id="Microsoft.AspNetCore.Identity.UI" version="5.0.0" />
+			<dependency id="Json.Net" version="1.0.33" />
+			<dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.0" />
+			<dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="6.0.0" />
+			<dependency id="System.Configuration.ConfigurationManager" version="6.0.0" />
+			<dependency id="System.IdentityModel.Tokens.Jwt" version="6.23.0" />
+			<dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="6.0.8" />
+			<dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="6.0.8" />
+			<dependency id="Microsoft.AspNetCore.Identity.UI" version="6.0.8" />
 			<dependency id="Microsoft.AspNetCore.Mvc.WebApiCompatShim" version="2.2.0" />
 			<dependency id="Microsoft.AspNetCore.Server.Kestrel" version="2.2.0" />
         </group>
     </dependencies>
   </metadata>
 </package>
+
 
 
 
