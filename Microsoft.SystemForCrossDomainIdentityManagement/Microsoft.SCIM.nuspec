@@ -2,12 +2,12 @@
 <package >
   <metadata>
     <id>Evercate.Microsoft.Scim</id>
-    <version>1.0.12</version>
+    <version>1.0.13</version>
     <title>Evercate scim based on Microsoft reference code</title>
     <authors>Evercate AB</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A direkt fork from Microsoft's reference scim code. Only neccesary updates will be done</description>
-    <releaseNotes>Updated dependencies</releaseNotes>
+    <releaseNotes>Fix typo in ProtocolExtensions Roles attribute (cherry-picked from upstream c7887c6) and IndexOutOfRangeException in PatchOperation2Combined.Value getter when value is an empty string</releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>microsoft evercate scim</tags>
     <repository type="git" url="https://github.com/Evercate/SCIMReferenceCode" />
@@ -27,6 +27,7 @@
     </dependencies>
   </metadata>
 </package>
+
 
 
 
