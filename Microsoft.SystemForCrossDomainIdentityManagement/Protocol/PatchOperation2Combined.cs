@@ -39,9 +39,9 @@ namespace Microsoft.SCIM
                 }
 
                 //Preformated json array
-                if (values is string && values.ToString()[0] == '[')
+                if (values is string str && str.StartsWith("[", StringComparison.Ordinal))
                 {
-                    return values.ToString();
+                    return str;
                 }
 
                 string result = JsonConvert.SerializeObject(this.values);
