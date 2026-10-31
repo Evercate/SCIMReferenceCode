@@ -20,9 +20,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.36" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.36" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.WebApiCompatShim" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
-    <!-- Pin: Kestrel 2.2.0 pulls System.Text.Encodings.Web 4.5.0 (GHSA-ghhp-997w-qr28, critical; fixed in 4.5.1).
-         Kestrel itself stays on 2.2.0: every 2.3.x needs Microsoft.Extensions.* 8.x (a major bump). -->
+    <!-- Pin: WebApiCompatShim 2.2.0 pulls System.Text.Encodings.Web 4.5.0 (GHSA-ghhp-997w-qr28, critical; fixed in 4.5.1).
+         Microsoft.AspNetCore.Server.Kestrel 2.2.0 was removed 2026-10-31: this library never hosts a server, the host app's
+         ASP.NET Core shared framework supplies Kestrel, and the 2.2 package carried Kestrel.Core 2.2.0 (GHSA-5rrx-jjjq-q2r5). -->
     <PackageReference Include="System.Text.Encodings.Web" Version="4.5.1" />
 
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
