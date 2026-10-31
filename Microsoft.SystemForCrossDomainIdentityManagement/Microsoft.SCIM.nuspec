@@ -14,15 +14,16 @@
 		<dependencies>
         <group>
 			<dependency id="Json.Net" version="1.0.33" />
-			<dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.0" />
+			<dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.2" />
 			<dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="6.0.0" />
-			<dependency id="System.Configuration.ConfigurationManager" version="6.0.0" />
-			<dependency id="System.IdentityModel.Tokens.Jwt" version="6.23.0" />
-			<dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="6.0.8" />
-			<dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="6.0.8" />
-			<dependency id="Microsoft.AspNetCore.Identity.UI" version="6.0.8" />
+			<dependency id="System.Configuration.ConfigurationManager" version="6.0.2" />
+			<dependency id="System.IdentityModel.Tokens.Jwt" version="6.36.0" />
+			<dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="6.0.36" />
+			<dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="6.0.36" />
+			<dependency id="Microsoft.AspNetCore.Identity.UI" version="6.0.36" />
 			<dependency id="Microsoft.AspNetCore.Mvc.WebApiCompatShim" version="2.2.0" />
 			<dependency id="Microsoft.AspNetCore.Server.Kestrel" version="2.2.0" />
+			<dependency id="System.Text.Encodings.Web" version="4.5.1" />
         </group>
     </dependencies>
   </metadata>
