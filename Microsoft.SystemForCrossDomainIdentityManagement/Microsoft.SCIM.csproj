@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
@@ -10,26 +10,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Controllers, MVC and the HTTP abstractions come from the ASP.NET Core shared framework of the host app. -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Json.Net" Version="1.0.33" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.2" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.36.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.36" />
-
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.36" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.36" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.WebApiCompatShim" Version="2.2.0" />
-    <!-- Pin: WebApiCompatShim 2.2.0 pulls System.Text.Encodings.Web 4.5.0 (GHSA-ghhp-997w-qr28, critical; fixed in 4.5.1).
-         Microsoft.AspNetCore.Server.Kestrel 2.2.0 was removed 2026-10-31: this library never hosts a server, the host app's
-         ASP.NET Core shared framework supplies Kestrel, and the 2.2 package carried Kestrel.Core 2.2.0 (GHSA-5rrx-jjjq-q2r5). -->
-    <PackageReference Include="System.Text.Encodings.Web" Version="4.5.1" />
-
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.14" />
+    <!-- Keep on the same Microsoft.IdentityModel 8.x line the host resolves (ADSCIM: 8.23.0). -->
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.14" />
+    <!-- The shim supplies System.Web.Http.HttpResponseException / HttpRequestMessageFeature / the WebApi formatters that
+         this library (and ADSCIM's exception middleware) use. 2.3.x is Microsoft's 2025 re-release of the 2.x line on
+         netstandard2.0; its Mvc 2.3 dependencies lose to the host's shared framework at build time.
+         Removed in the net10 retarget: Extensions.DependencyInjection(+Abstractions) (in the shared framework),
+         Identity.UI (only produced an unused UIFramework attribute), the System.Text.Encodings.Web pin (shared framework),
+         and the deprecated FxCopAnalyzers. -->
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.WebApiCompatShim" Version="2.3.13" />
   </ItemGroup>
 
   <ItemGroup>

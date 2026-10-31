@@ -1,30 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
     <id>Evercate.Microsoft.Scim</id>
-    <version>1.0.13</version>
+    <version>2.0.0</version>
     <title>Evercate scim based on Microsoft reference code</title>
     <authors>Evercate AB</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A direkt fork from Microsoft's reference scim code. Only neccesary updates will be done</description>
-    <releaseNotes>Fix typo in ProtocolExtensions Roles attribute (cherry-picked from upstream c7887c6) and IndexOutOfRangeException in PatchOperation2Combined.Value getter when value is an empty string</releaseNotes>
+    <releaseNotes>Retargeted net6.0 to net10.0 (ASP.NET Core 10 shared framework). JwtBearer/Mvc.NewtonsoftJson/ConfigurationManager 10.0.14, System.IdentityModel.Tokens.Jwt 8.23.0, WebApiCompatShim 2.3.13. Dropped Kestrel 2.2, Identity.UI, Extensions.DependencyInjection and the Encodings.Web pin. No code changes.</releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>microsoft evercate scim</tags>
     <repository type="git" url="https://github.com/Evercate/SCIMReferenceCode" />
 		<dependencies>
-        <group>
+        <group targetFramework="net10.0">
 			<dependency id="Json.Net" version="1.0.33" />
-			<dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.2" />
-			<dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="6.0.0" />
-			<dependency id="System.Configuration.ConfigurationManager" version="6.0.2" />
-			<dependency id="System.IdentityModel.Tokens.Jwt" version="6.36.0" />
-			<dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="6.0.36" />
-			<dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="6.0.36" />
-			<dependency id="Microsoft.AspNetCore.Identity.UI" version="6.0.36" />
-			<dependency id="Microsoft.AspNetCore.Mvc.WebApiCompatShim" version="2.2.0" />
-			<dependency id="System.Text.Encodings.Web" version="4.5.1" />
+			<dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="10.0.14" />
+			<dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="10.0.14" />
+			<dependency id="Microsoft.AspNetCore.Mvc.WebApiCompatShim" version="2.3.13" />
+			<dependency id="System.Configuration.ConfigurationManager" version="10.0.14" />
+			<dependency id="System.IdentityModel.Tokens.Jwt" version="8.23.0" />
         </group>
     </dependencies>
+    <frameworkReferences>
+        <group targetFramework="net10.0">
+            <frameworkReference name="Microsoft.AspNetCore.App" />
+        </group>
+    </frameworkReferences>
   </metadata>
 </package>
 
